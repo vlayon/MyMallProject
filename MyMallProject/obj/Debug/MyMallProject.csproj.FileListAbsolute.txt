@@ -1,0 +1,16 @@
+E:\Telerik\workfolder\MyMallProject\MyMallProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\Telerik\workfolder\MyMallProject\MyMallProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\Telerik\workfolder\MyMallProject\MyMallProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\Telerik\workfolder\MyMallProject\MyMallProject\bin\Debug\MyMallProject.dll
+E:\Telerik\workfolder\MyMallProject\MyMallProject\bin\Debug\MyMallProject.pdb
+E:\Telerik\workfolder\MyMallProject\MyMallProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+E:\Telerik\workfolder\MyMallProject\MyMallProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+E:\Telerik\workfolder\MyMallProject\MyMallProject\bin\Debug\WebDriver.dll
+E:\Telerik\workfolder\MyMallProject\MyMallProject\bin\Debug\WebDriver.Support.dll
+E:\Telerik\workfolder\MyMallProject\MyMallProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+E:\Telerik\workfolder\MyMallProject\MyMallProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+E:\Telerik\workfolder\MyMallProject\MyMallProject\bin\Debug\WebDriver.xml
+E:\Telerik\workfolder\MyMallProject\MyMallProject\bin\Debug\WebDriver.Support.xml
+E:\Telerik\workfolder\MyMallProject\MyMallProject\obj\Debug\MyMallProject.csprojResolveAssemblyReference.cache
+E:\Telerik\workfolder\MyMallProject\MyMallProject\obj\Debug\MyMallProject.dll
+E:\Telerik\workfolder\MyMallProject\MyMallProject\obj\Debug\MyMallProject.pdb
