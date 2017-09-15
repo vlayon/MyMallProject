@@ -58,7 +58,8 @@
     <Compile Include="Basket\Basket_DeliveryAddress.cs" />
     <Compile Include="LogIn\LogInTests.cs" />
     <Compile Include="Pages\AddItemPage.cs" />
-    <Compile Include="Pages\Class1.cs" />
+    <Compile Include="Pages\ForgotPasswordPage.cs" />
+    <Compile Include="Pages\LogInPage.cs" />
     <Compile Include="Pages\MyCartPage.cs" />
     <Compile Include="Pages\MyCart_Addrespage.cs" />
     <Compile Include="Pages\TheSearchFieldPage.cs" />

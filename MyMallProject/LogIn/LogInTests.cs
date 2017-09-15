@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Text;
+using MyMallProject.Pages;
 
 namespace MyMallProject
 {
@@ -35,55 +36,44 @@ namespace MyMallProject
           [TestMethod]
           public void LoginWithvalidCredentials()
           {
-              IWebElement emailForLogIn = driverChrome.FindElement(By.Id("login_email"));
-              emailForLogIn.SendKeys("vhidd3n@gmail.com");
-              IWebElement passForLogIn = driverChrome.FindElement(By.Id("header_login_pass"));
-              passForLogIn.SendKeys("testPass");
-              IWebElement logInButton = driverChrome.FindElement(By.Id("LoginButton"));
-              logInButton.Click();
-              IWebElement firstName = driverChrome.FindElement(By.Id("account_firstname"));
-              Assert.AreEqual("Владимир", firstName.GetAttribute("value"));
+            LogInPage logInPage = new LogInPage(driverChrome);
+            logInPage.EmailForLogIn.SendKeys("vhidd3n@gmail.com");
+            logInPage.PassForLogIn.SendKeys("testPass");
+            logInPage.LogInButton.Click();
+            Assert.AreEqual("Владимир", logInPage.FirstName.GetAttribute("value"));
           }
         
           [TestMethod]
           public void LoginWithFakeEmail()
           {
-              IWebElement emailForLogIn = driverChrome.FindElement(By.Id("login_email"));
-              emailForLogIn.SendKeys("vhidd8n@gmail.com");
-              IWebElement passForLogIn = driverChrome.FindElement(By.Id("header_login_pass"));
-              passForLogIn.SendKeys("testPass");
-              IWebElement logInButton = driverChrome.FindElement(By.Id("LoginButton"));
-              logInButton.Click();
-              IWebElement wrongEmailMessage= driverChrome.FindElement(By.XPath("//*[contains(text(),'Въведени некоректно E-mail или парола.')]"));
-               bool errorMessageIsPresent = wrongEmailMessage.Displayed;
-               Assert.AreEqual("True", errorMessageIsPresent.ToString());
+            LogInPage logInPage = new LogInPage(driverChrome);
+            logInPage.EmailForLogIn.SendKeys("vhidd8n@gmail.com");
+            logInPage.PassForLogIn.SendKeys("testPass");
+            logInPage.LogInButton.Click();
+            bool errorMessageIsPresent = logInPage.WrongEmailMessage.Displayed;
+            Assert.AreEqual("True", errorMessageIsPresent.ToString());
               
           }
         
          [TestMethod]
          public void LoginWithCorrectEmailAndWrongPassword()
          {
-             IWebElement emailForLogIn = driverChrome.FindElement(By.Id("login_email"));
-             emailForLogIn.SendKeys("vhidd3n@gmail.com");
-             IWebElement passForLogIn = driverChrome.FindElement(By.Id("header_login_pass"));
-             passForLogIn.SendKeys("testP1ss");
-             IWebElement logInButton = driverChrome.FindElement(By.Id("LoginButton"));
-             logInButton.Click();
-             IWebElement wrongEmailMessage = driverChrome.FindElement(By.XPath("//*[contains(text(),'Въведени некоректно E-mail или парола.')]"));
-             bool errorMessageIsPresent = wrongEmailMessage.Displayed;
-             Assert.AreEqual("True", errorMessageIsPresent.ToString());
+            LogInPage logInPage = new LogInPage(driverChrome);
+            logInPage.EmailForLogIn.SendKeys("vhidd3n@gmail.com");
+            logInPage.PassForLogIn.SendKeys("testP1ss");
+            logInPage.LogInButton.Click();
+            bool errorMessageIsPresent = logInPage.WrongEmailMessage.Displayed;
+            Assert.AreEqual("True", errorMessageIsPresent.ToString());
         
          }
          [TestMethod]
          public void LoginWithCorrectEmailAndEmptyPassword()
          {
-             IWebElement emailForLogIn = driverChrome.FindElement(By.Id("login_email"));
-             emailForLogIn.SendKeys("vhidd3n@gmail.com");
-             IWebElement logInButton = driverChrome.FindElement(By.Id("LoginButton"));
-             logInButton.Click();
-             IWebElement emptyPasswordMessage = driverChrome.FindElement(By.XPath("//*[contains(text(),'Моля, въведете поне 3 символа.')]"));
-             bool errorMessageEmptyPasswordIsPresent = emptyPasswordMessage.Displayed;
-             Assert.AreEqual("True", errorMessageEmptyPasswordIsPresent.ToString());
+            LogInPage logInPage = new LogInPage(driverChrome);
+            logInPage.EmailForLogIn.SendKeys("vhidd3n@gmail.com");
+            logInPage.LogInButton.Click();
+            bool errorMessageEmptyPasswordIsPresent = logInPage.EmptyPasswordMessage.Displayed;
+            Assert.AreEqual("True", errorMessageEmptyPasswordIsPresent.ToString());
         
          }
 
@@ -91,12 +81,10 @@ namespace MyMallProject
           public void ForgotPasswordAndTypeYourRealEmailForRecovering()
           {
               driverChrome.Navigate().GoToUrl("http://sports.mymall.bg/login.php?action=reset_password");
-              IWebElement emailField = driverChrome.FindElement(By.Id("email"));
-              emailField.SendKeys("vhidd3n@gmail.com");
-              IWebElement sendEmailButton = driverChrome.FindElement(By.Id("ForgotPassModalSubmitButton"));
-              sendEmailButton.Click();
-              IWebElement successfulRecoveryMessage = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Успешно направена заявка.' )]"));
-              bool emailSuccessfulSentMessageIsPresent = successfulRecoveryMessage.Displayed;
+              ForgotPasswordPage forgotPass = new ForgotPasswordPage(driverChrome);
+              forgotPass.EmailField.SendKeys("vhidd3n@gmail.com");
+              forgotPass.SendEmailButton.Click();
+              bool emailSuccessfulSentMessageIsPresent = forgotPass.SuccessfulRecoveryMessage.Displayed;
               Assert.AreEqual("True", emailSuccessfulSentMessageIsPresent.ToString());
           }
 
@@ -104,10 +92,9 @@ namespace MyMallProject
           public void ForgotPasswordAndTypeEmptyEmailForRecovering()
           {
               driverChrome.Navigate().GoToUrl("http://sports.mymall.bg/login.php?action=reset_password");
-              IWebElement sendEmailButton = driverChrome.FindElement(By.Id("ForgotPassModalSubmitButton"));
-              sendEmailButton.Click();
-              IWebElement unSuccessfulRecoveryMessage = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Моля въведи e-mail' )]"));
-              bool emailUnsuccessfulSentMessageIsPresent= unSuccessfulRecoveryMessage.Displayed;
+              ForgotPasswordPage forgotPass = new ForgotPasswordPage(driverChrome);
+              forgotPass.SendEmailButton.Click();
+              bool emailUnsuccessfulSentMessageIsPresent= forgotPass.UnSuccessfulRecoveryMessage.Displayed;
               Assert.AreEqual("True", emailUnsuccessfulSentMessageIsPresent.ToString());
           }
 
@@ -115,25 +102,22 @@ namespace MyMallProject
           public void ForgotPasswordAndTypeWrongEmailForRecovering()
           {
               driverChrome.Navigate().GoToUrl("http://sports.mymall.bg/login.php?action=reset_password");
-              IWebElement emailField = driverChrome.FindElement(By.Id("email"));
-              emailField.SendKeys("vhidd8n@gmail.com");
-              IWebElement sendEmailButton = driverChrome.FindElement(By.Id("ForgotPassModalSubmitButton"));
-              sendEmailButton.Click();
-              IWebElement unSuccessfulSentEmailMessage = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Няма потребител с такъв e-mail.' )]"));
-              bool worngEmailMessageIsPresent = unSuccessfulSentEmailMessage.Displayed;
-              Assert.AreEqual("True", worngEmailMessageIsPresent.ToString());
+              ForgotPasswordPage forgotPass = new ForgotPasswordPage(driverChrome);
+              forgotPass.EmailField.SendKeys("vhidd8n@gmail.com");
+              forgotPass.SendEmailButton.Click();
+              
+              bool wrongEmailMessageIsPresent = forgotPass.UserWithThisEmailDoesntExist.Displayed;
+              Assert.AreEqual("True", wrongEmailMessageIsPresent.ToString());
           }
 
         [TestMethod]
           public void ForgotPasswordAndTypeInvalidEmailForRecovering()
           {
               driverChrome.Navigate().GoToUrl("http://sports.mymall.bg/login.php?action=reset_password");
-              IWebElement emailField = driverChrome.FindElement(By.Id("email"));
-              emailField.SendKeys("12345");
-              IWebElement sendEmailButton = driverChrome.FindElement(By.Id("ForgotPassModalSubmitButton"));
-              sendEmailButton.Click();
-              IWebElement invalidEmailMessage = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Невалиден e-mail' )]"));
-              bool isInvalidEmail = invalidEmailMessage.Displayed;
+              ForgotPasswordPage forgotPass = new ForgotPasswordPage(driverChrome);
+              forgotPass.EmailField.SendKeys("12345");
+              forgotPass.SendEmailButton.Click();
+              bool isInvalidEmail = forgotPass.InvalidEmailMessage.Displayed;
               Assert.AreEqual("True", isInvalidEmail.ToString());
           }
 

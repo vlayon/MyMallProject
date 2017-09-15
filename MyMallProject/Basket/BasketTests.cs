@@ -133,101 +133,100 @@ namespace MyMallProject
            else
            {
                // the price should be the same, the quantity also the same
-       
-       
+           
                Assert.AreEqual(wholePriceInStringBeforeChangingQuantity, wholePriceInStringAfterChangingQuantity);
            }
        }
        
-       //    [TestMethod]
-       //public void AddItemsToBasketAndChangeQuantityOfFirstItemTo0_PageObjectModel()
-       //{
-       //    TheSearchFieldPage searchField = new TheSearchFieldPage(driverChrome);
-       //    searchField.SearchField.Click();
-       //    searchField.SearchField.SendKeys("мъжки къси панталони");
-       //    searchField.GoSearchButton.Click();
-       //    //adding first item
-       //    IList<IWebElement> EvenResultsList = driverChrome.FindElements(By.XPath("//li[@class='ListView ListViewEven product']"));
-       //    EvenResultsList[0].Click();
-       //    AddItemPage addingFirstItem = new AddItemPage(driverChrome);
-       //    SelectElement sizeMenuFirstItem = addingFirstItem.getSelectSizeOptions();
-       //    sizeMenuFirstItem.SelectByIndex(1);
-       //    Thread.Sleep(3000);
-       //    addingFirstItem.AddToBasket.Click();
-       //    MyCartPage myCart = new MyCartPage(driverChrome);
-       //    myCart.SeeTheCartButton.Click();
-       //    //adding second item to basket
-       //    searchField.SearchField.Click();
-       //    searchField.SearchField.SendKeys("мъжки къси панталони");
-       //    searchField.GoSearchButton.Click();
-       //    IList<IWebElement> OddResultsList = driverChrome.FindElements(By.XPath("//li[@class='ListView ListViewOdd product']"));
-       //    OddResultsList[0].Click();
-       //    AddItemPage addingSecondItem = new AddItemPage(driverChrome);
-       //    SelectElement sizeMenuSecondItem = addingSecondItem.getSelectSizeOptions();
-       //    sizeMenuSecondItem.SelectByIndex(1);
-       //    Thread.Sleep(3000);
-       //    addingSecondItem.AddToBasket.Click();
-       //    myCart.SeeTheCartButton.Click();
-       //    IWebElement firstItemInBasket = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Puma Essential')]"));
-       //    IWebElement secondItemInBasket = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Jack and Jones')]"));
-       //    string wholePriceInStringBeforeChangingQuantity = driverChrome.FindElement(By.XPath("//tr[@class='First Odd Even']/td/em/span")).Text;
-       //    string levaPrice = wholePriceInStringBeforeChangingQuantity.Substring(0, wholePriceInStringBeforeChangingQuantity.Length - 5);
-       //    string stotinkiPrice = driverChrome.FindElement(By.XPath("//tr[@class='First Odd Even']/td/em/span/sup")).Text;
-       //    string firstItemPrice = levaPrice + "." + stotinkiPrice;
-       //    //changing quantity to 0
-       //    SelectElement firstItemQuantity = new SelectElement(driverChrome.FindElement(By.XPath("//div[@class='Value select_big_arr']/select")));
-       //    firstItemQuantity.SelectByValue("0");
-       //    Thread.Sleep(3000);
-       //    IAlert alert = driverChrome.SwitchTo().Alert();
-       //    alert.Accept();
-       //    IList<IWebElement> listOfMissingtems = driverChrome.FindElements(By.XPath("//*[contains(text(), 'Puma Essential')]"));
-       //    Assert.AreEqual(0, listOfMissingtems.Count);
-       //  
-       //}
-       //
-       //[TestMethod]
-       //public void AddItemsToBasketAndRemoveAnItem_PageObjectModel()
-       //{
-       //    TheSearchFieldPage searchField = new TheSearchFieldPage(driverChrome);
-       //    searchField.SearchField.Click();
-       //    searchField.SearchField.SendKeys("мъжки къси панталони");
-       //    searchField.GoSearchButton.Click();
-       //    //adding first item
-       //    IList<IWebElement> EvenResultsList = driverChrome.FindElements(By.XPath("//li[@class='ListView ListViewEven product']"));
-       //    EvenResultsList[0].Click();
-       //    AddItemPage addingFirstItem = new AddItemPage(driverChrome);
-       //    SelectElement sizeMenuFirstItem = addingFirstItem.getSelectSizeOptions();
-       //    sizeMenuFirstItem.SelectByIndex(1);
-       //    Thread.Sleep(3000);
-       //    addingFirstItem.AddToBasket.Click();
-       //    MyCartPage myCart = new MyCartPage(driverChrome);
-       //    myCart.SeeTheCartButton.Click();
-       //    //adding second item to basket
-       //    searchField.SearchField.Click();
-       //    searchField.SearchField.SendKeys("мъжки къси панталони");
-       //    searchField.GoSearchButton.Click();
-       //    IList<IWebElement> OddResultsList = driverChrome.FindElements(By.XPath("//li[@class='ListView ListViewOdd product']"));
-       //    OddResultsList[0].Click();
-       //    AddItemPage addingSecondItem = new AddItemPage(driverChrome);
-       //    SelectElement sizeMenuSecondItem = addingSecondItem.getSelectSizeOptions();
-       //    sizeMenuSecondItem.SelectByIndex(1);
-       //    Thread.Sleep(3000);
-       //    addingSecondItem.AddToBasket.Click();
-       //    myCart.SeeTheCartButton.Click();
-       //    IWebElement firstItemInBasket = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Puma Essential')]"));
-       //    IWebElement secondItemInBasket = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Jack and Jones')]"));
-       //    string wholePriceInStringBeforeChangingQuantity = driverChrome.FindElement(By.XPath("//tr[@class='First Odd Even']/td/em/span")).Text;
-       //    string levaPrice = wholePriceInStringBeforeChangingQuantity.Substring(0, wholePriceInStringBeforeChangingQuantity.Length - 5);
-       //    string stotinkiPrice = driverChrome.FindElement(By.XPath("//tr[@class='First Odd Even']/td/em/span/sup")).Text;
-       //    string firstItemPrice = levaPrice + "." + stotinkiPrice;
-       //    //removing item
-       //    myCart.RemoveItemLink.Click();
-       //    Thread.Sleep(3000);
-       //    IAlert alert = driverChrome.SwitchTo().Alert();
-       //    alert.Accept();
-       //    IList<IWebElement> listOfMissingtems = driverChrome.FindElements(By.XPath("//*[contains(text(), 'Puma Essential')]"));
-       //    Assert.AreEqual(0, listOfMissingtems.Count);
-       //
-       //}
+           [TestMethod]
+       public void AddItemsToBasketAndChangeQuantityOfFirstItemTo0_PageObjectModel()
+       {
+           TheSearchFieldPage searchField = new TheSearchFieldPage(driverChrome);
+           searchField.SearchField.Click();
+           searchField.SearchField.SendKeys("мъжки къси панталони");
+           searchField.GoSearchButton.Click();
+           //adding first item
+           IList<IWebElement> EvenResultsList = driverChrome.FindElements(By.XPath("//li[@class='ListView ListViewEven product']"));
+           EvenResultsList[0].Click();
+           AddItemPage addingFirstItem = new AddItemPage(driverChrome);
+           SelectElement sizeMenuFirstItem = addingFirstItem.getSelectSizeOptions();
+           sizeMenuFirstItem.SelectByIndex(1);
+           Thread.Sleep(3000);
+           addingFirstItem.AddToBasket.Click();
+           MyCartPage myCart = new MyCartPage(driverChrome);
+           myCart.SeeTheCartButton.Click();
+           //adding second item to basket
+           searchField.SearchField.Click();
+           searchField.SearchField.SendKeys("мъжки къси панталони");
+           searchField.GoSearchButton.Click();
+           IList<IWebElement> OddResultsList = driverChrome.FindElements(By.XPath("//li[@class='ListView ListViewOdd product']"));
+           OddResultsList[0].Click();
+           AddItemPage addingSecondItem = new AddItemPage(driverChrome);
+           SelectElement sizeMenuSecondItem = addingSecondItem.getSelectSizeOptions();
+           sizeMenuSecondItem.SelectByIndex(1);
+           Thread.Sleep(3000);
+           addingSecondItem.AddToBasket.Click();
+           myCart.SeeTheCartButton.Click();
+           IWebElement firstItemInBasket = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Puma Essential')]"));
+           IWebElement secondItemInBasket = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Jack and Jones')]"));
+           string wholePriceInStringBeforeChangingQuantity = driverChrome.FindElement(By.XPath("//tr[@class='First Odd Even']/td/em/span")).Text;
+           string levaPrice = wholePriceInStringBeforeChangingQuantity.Substring(0, wholePriceInStringBeforeChangingQuantity.Length - 5);
+           string stotinkiPrice = driverChrome.FindElement(By.XPath("//tr[@class='First Odd Even']/td/em/span/sup")).Text;
+           string firstItemPrice = levaPrice + "." + stotinkiPrice;
+           //changing quantity to 0
+           SelectElement firstItemQuantity = new SelectElement(driverChrome.FindElement(By.XPath("//div[@class='Value select_big_arr']/select")));
+           firstItemQuantity.SelectByValue("0");
+           Thread.Sleep(3000);
+           IAlert alert = driverChrome.SwitchTo().Alert();
+           alert.Accept();
+           IList<IWebElement> listOfMissingtems = driverChrome.FindElements(By.XPath("//*[contains(text(), 'Puma Essential')]"));
+           Assert.AreEqual(0, listOfMissingtems.Count);
+         
+       }
+       
+       [TestMethod]
+       public void AddItemsToBasketAndRemoveAnItem_PageObjectModel()
+       {
+           TheSearchFieldPage searchField = new TheSearchFieldPage(driverChrome);
+           searchField.SearchField.Click();
+           searchField.SearchField.SendKeys("мъжки къси панталони");
+           searchField.GoSearchButton.Click();
+           //adding first item
+           IList<IWebElement> EvenResultsList = driverChrome.FindElements(By.XPath("//li[@class='ListView ListViewEven product']"));
+           EvenResultsList[0].Click();
+           AddItemPage addingFirstItem = new AddItemPage(driverChrome);
+           SelectElement sizeMenuFirstItem = addingFirstItem.getSelectSizeOptions();
+           sizeMenuFirstItem.SelectByIndex(1);
+           Thread.Sleep(3000);
+           addingFirstItem.AddToBasket.Click();
+           MyCartPage myCart = new MyCartPage(driverChrome);
+           myCart.SeeTheCartButton.Click();
+           //adding second item to basket
+           searchField.SearchField.Click();
+           searchField.SearchField.SendKeys("мъжки къси панталони");
+           searchField.GoSearchButton.Click();
+           IList<IWebElement> OddResultsList = driverChrome.FindElements(By.XPath("//li[@class='ListView ListViewOdd product']"));
+           OddResultsList[0].Click();
+           AddItemPage addingSecondItem = new AddItemPage(driverChrome);
+           SelectElement sizeMenuSecondItem = addingSecondItem.getSelectSizeOptions();
+           sizeMenuSecondItem.SelectByIndex(1);
+           Thread.Sleep(3000);
+           addingSecondItem.AddToBasket.Click();
+           myCart.SeeTheCartButton.Click();
+           IWebElement firstItemInBasket = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Puma Essential')]"));
+           IWebElement secondItemInBasket = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Jack and Jones')]"));
+           string wholePriceInStringBeforeChangingQuantity = driverChrome.FindElement(By.XPath("//tr[@class='First Odd Even']/td/em/span")).Text;
+           string levaPrice = wholePriceInStringBeforeChangingQuantity.Substring(0, wholePriceInStringBeforeChangingQuantity.Length - 5);
+           string stotinkiPrice = driverChrome.FindElement(By.XPath("//tr[@class='First Odd Even']/td/em/span/sup")).Text;
+           string firstItemPrice = levaPrice + "." + stotinkiPrice;
+           //removing item
+           myCart.RemoveItemLink.Click();
+           Thread.Sleep(3000);
+           IAlert alert = driverChrome.SwitchTo().Alert();
+           alert.Accept();
+           IList<IWebElement> listOfMissingtems = driverChrome.FindElements(By.XPath("//*[contains(text(), 'Puma Essential')]"));
+           Assert.AreEqual(0, listOfMissingtems.Count);
+       
+       }
     }
 }
