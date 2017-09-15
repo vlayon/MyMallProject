@@ -56,6 +56,16 @@ namespace MyMallProject.Pages
 
         [FindsBy(How = How.XPath, Using = "//*[@id='NewBillingAddress']/div[2]/div/input")]
         public IWebElement ProceedToCourierChoice { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//*[contains(text(), 'Избери куриер')]")]
+        public IWebElement SuccesfullyWentOnTheCourierPage { get; set; }
+
+        [FindsBy(How=How.Id, Using = "FormField_5-error")]
+        public IWebElement SurnameIsMissingMessage {get; set;}
+        
+        [FindsBy(How = How.Id, Using = "FormField_4-erro")]
+        public IWebElement pleaseEnterNameMessage { get; set; }
+        
         
     }
 }

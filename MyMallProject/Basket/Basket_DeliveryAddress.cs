@@ -88,7 +88,8 @@ namespace MyMallProject.Basket
             addressPage.InvoiceDetailsField.Click();
             addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
             addressPage.ProceedToCourierChoice.Click();
-        
+            Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+                
         }
 
 
@@ -121,9 +122,9 @@ namespace MyMallProject.Basket
             addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
             addressPage.ProceedToCourierChoice.Click();
             IWebElement enterNameMessage = driverChrome.FindElement(By.Id("FormField_4-error"));
-            Assert.AreEqual("Моля въведи име", enterNameMessage.Text.ToString());
+            Assert.AreEqual("Моля въведи име", addressPage.pleaseEnterNameMessage.Text.ToString());
         }
-
+       
         [TestMethod]
          public void InputAddressDetails_NameWithOver100Characters_PageObjectModel()
          {
@@ -153,10 +154,10 @@ namespace MyMallProject.Basket
              addressPage.InvoiceDetailsField.Click();
              addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
              addressPage.ProceedToCourierChoice.Click();
-             IWebElement chooseCourier = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Избери куриер')]"));
-        
-         }
+             Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
 
+        }
+       
         [TestMethod]
         public void InputAddressDetails_NameWithSpecialCharacters_PageObjectModel()
         {
@@ -186,10 +187,9 @@ namespace MyMallProject.Basket
             addressPage.InvoiceDetailsField.Click();
             addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
             addressPage.ProceedToCourierChoice.Click();
-            IWebElement chooseCourier = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Избери куриер')]"));
-        
+            Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
         }
-
+       
          [TestMethod]
          public void InputAddressDetails_LeaveSurnameEmpty_PageObjectModel()
          {
@@ -217,12 +217,11 @@ namespace MyMallProject.Basket
              addressPage.InvoiceDetailsField.Click();
              addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
              addressPage.ProceedToCourierChoice.Click();
-             IWebElement surnameMessage = driverChrome.FindElement(By.Id("FormField_5-error"));
-             Assert.AreEqual("Моля въведи фамилия", surnameMessage.Text.ToString());
+             Assert.AreEqual("Моля въведи фамилия", addressPage.SurnameIsMissingMessage.Text.ToString());
             
         
          }
-
+       
         [TestMethod]
         public void InputAddressDetails_TypeForSurnameMoreThan100Characters_PageObjectModel()
         {
@@ -252,43 +251,43 @@ namespace MyMallProject.Basket
             addressPage.InvoiceDetailsField.Click();
             addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
             addressPage.ProceedToCourierChoice.Click();
-            IWebElement chooseCourier = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Избери куриер')]"));
+            Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed); 
             
         }
-
-          [TestMethod]
-          public void InputAddressDetails_TypeSurnameWithCharacters_PageObjectModel()
-          {
-              MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
-              addressPage.FirstNameField.Click();
-              addressPage.FirstNameField.SendKeys("Владимир");
-              addressPage.SurnameField.Click();
-              addressPage.SurnameField.SendKeys("Йонч#$%^в");
-              addressPage.TelephoneField.Click();
-              addressPage.TelephoneField.SendKeys("0878878576");
-              addressPage.CityOrVillageField.Click();
-              addressPage.CityOrVillageField.SendKeys("София");
-              addressPage.PostCodeField.Click();
-              addressPage.PostCodeField.SendKeys("1000");
-              addressPage.ProvinceField.Click();
-              addressPage.ProvinceField.SendKeys("София");
-              addressPage.StreetField.Click();
-              addressPage.StreetField.SendKeys("бул. Васил Левски");
-              addressPage.StreetNumberField.Click();
-              addressPage.StreetNumberField.SendKeys("33");
-              addressPage.BlockEntranceField.Click();
-              addressPage.BlockEntranceField.SendKeys("A");
-              addressPage.FloorField.Click();
-              addressPage.FloorField.SendKeys("2");
-              addressPage.ApartmentField.Click();
-              addressPage.ApartmentField.SendKeys("4");
-              addressPage.InvoiceDetailsField.Click();
-              addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
-              addressPage.ProceedToCourierChoice.Click();
-              IWebElement chooseCourier = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Избери куриер')]"));
         
-          }
-
+           [TestMethod]
+           public void InputAddressDetails_TypeSurnameWithCharacters_PageObjectModel()
+           {
+               MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
+               addressPage.FirstNameField.Click();
+               addressPage.FirstNameField.SendKeys("Владимир");
+               addressPage.SurnameField.Click();
+               addressPage.SurnameField.SendKeys("Йонч#$%^в");
+               addressPage.TelephoneField.Click();
+               addressPage.TelephoneField.SendKeys("0878878576");
+               addressPage.CityOrVillageField.Click();
+               addressPage.CityOrVillageField.SendKeys("София");
+               addressPage.PostCodeField.Click();
+               addressPage.PostCodeField.SendKeys("1000");
+               addressPage.ProvinceField.Click();
+               addressPage.ProvinceField.SendKeys("София");
+               addressPage.StreetField.Click();
+               addressPage.StreetField.SendKeys("бул. Васил Левски");
+               addressPage.StreetNumberField.Click();
+               addressPage.StreetNumberField.SendKeys("33");
+               addressPage.BlockEntranceField.Click();
+               addressPage.BlockEntranceField.SendKeys("A");
+               addressPage.FloorField.Click();
+               addressPage.FloorField.SendKeys("2");
+               addressPage.ApartmentField.Click();
+               addressPage.ApartmentField.SendKeys("4");
+               addressPage.InvoiceDetailsField.Click();
+               addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
+               addressPage.ProceedToCourierChoice.Click();
+               Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+         
+           }
+        
           [TestMethod]
           public void InputAddressDetails_TypeMobileTelephoneNumberWith10DigitsStartingWith09_PageObjectModel()
           {
@@ -318,10 +317,10 @@ namespace MyMallProject.Basket
               addressPage.InvoiceDetailsField.Click();
               addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
               addressPage.ProceedToCourierChoice.Click();
-              IWebElement chooseCourier = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Избери куриер')]"));
-        
-          }
+              Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
 
+        }
+        
          [TestMethod]
          public void InputAddressDetails_TypeStationaryTelephoneNumberWith13Digits_PageObjectModel()
          {
@@ -351,8 +350,8 @@ namespace MyMallProject.Basket
              addressPage.InvoiceDetailsField.Click();
              addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
              addressPage.ProceedToCourierChoice.Click();
-             IWebElement chooseCourier = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Избери куриер')]"));
-        
+             Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+
          }
         
          [TestMethod]
@@ -384,10 +383,10 @@ namespace MyMallProject.Basket
              addressPage.InvoiceDetailsField.Click();
              addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
              addressPage.ProceedToCourierChoice.Click();
-             IWebElement chooseCourier = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Избери куриер')]"));
-        
-         }
+             Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
 
+        }
+       
          [TestMethod]
          public void InputAddressDetails_TypeStationaryTelephoneNumberWith8Digits_PageObjectModel()
          {
@@ -417,10 +416,10 @@ namespace MyMallProject.Basket
              addressPage.InvoiceDetailsField.Click();
              addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
              addressPage.ProceedToCourierChoice.Click();
-             IWebElement chooseCourier = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Избери куриер')]"));
-         
-         }
+             Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
 
+        }
+       
           [TestMethod]
           public void InputAddressDetails_TypeStationaryTelephoneNumberWith7Digits_PageObjectModel()
           {
@@ -450,10 +449,10 @@ namespace MyMallProject.Basket
               addressPage.InvoiceDetailsField.Click();
               addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
               addressPage.ProceedToCourierChoice.Click();
-              IWebElement chooseCourier = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Избери куриер')]"));
-        
-          }
+              Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
 
+          }
+        
         [TestMethod]
         public void InputAddressDetails_LeaveTelephoneNumberEmpty_PageObjectModel()
         {
@@ -481,43 +480,43 @@ namespace MyMallProject.Basket
             addressPage.InvoiceDetailsField.Click();
             addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
             addressPage.ProceedToCourierChoice.Click();
-            IWebElement chooseCourier = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Моля въведи телефон')]"));
-        
+            Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+
         }
+        
+        [TestMethod]
+        public void InputAddressDetails_TypeOver255CharsInIvoiceDetailsField_PageObjectModel()
+        {
+            MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
+            addressPage.FirstNameField.Click();
+            addressPage.FirstNameField.SendKeys("Владимир");
+            addressPage.SurnameField.Click();
+            addressPage.SurnameField.SendKeys("Йончев");
+            addressPage.TelephoneField.Click();
+            addressPage.TelephoneField.SendKeys("0878878576");
+            addressPage.CityOrVillageField.Click();
+            addressPage.CityOrVillageField.SendKeys("София");
+            addressPage.PostCodeField.Click();
+            addressPage.PostCodeField.SendKeys("1000");
+            addressPage.ProvinceField.Click();
+            addressPage.ProvinceField.SendKeys("София");
+            addressPage.StreetField.Click();
+            addressPage.StreetField.SendKeys("бул. Васил Левски");
+            addressPage.StreetNumberField.Click();
+            addressPage.StreetNumberField.SendKeys("33");
+            addressPage.BlockEntranceField.Click();
+            addressPage.BlockEntranceField.SendKeys("A");
+            addressPage.FloorField.Click();
+            addressPage.FloorField.SendKeys("2");
+            addressPage.ApartmentField.Click();
+            addressPage.ApartmentField.SendKeys("4");
+            addressPage.InvoiceDetailsField.Click();
+            addressPage.InvoiceDetailsField.SendKeys("ВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВлади");
+            addressPage.ProceedToCourierChoice.Click();
+            Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
 
-       [TestMethod]
-       public void InputAddressDetails_TypeOver255CharsInIvoiceDetailsField_PageObjectModel()
-       {
-           MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
-           addressPage.FirstNameField.Click();
-           addressPage.FirstNameField.SendKeys("Владимир");
-           addressPage.SurnameField.Click();
-           addressPage.SurnameField.SendKeys("Йончев");
-           addressPage.TelephoneField.Click();
-           addressPage.TelephoneField.SendKeys("0878878576");
-           addressPage.CityOrVillageField.Click();
-           addressPage.CityOrVillageField.SendKeys("София");
-           addressPage.PostCodeField.Click();
-           addressPage.PostCodeField.SendKeys("1000");
-           addressPage.ProvinceField.Click();
-           addressPage.ProvinceField.SendKeys("София");
-           addressPage.StreetField.Click();
-           addressPage.StreetField.SendKeys("бул. Васил Левски");
-           addressPage.StreetNumberField.Click();
-           addressPage.StreetNumberField.SendKeys("33");
-           addressPage.BlockEntranceField.Click();
-           addressPage.BlockEntranceField.SendKeys("A");
-           addressPage.FloorField.Click();
-           addressPage.FloorField.SendKeys("2");
-           addressPage.ApartmentField.Click();
-           addressPage.ApartmentField.SendKeys("4");
-           addressPage.InvoiceDetailsField.Click();
-           addressPage.InvoiceDetailsField.SendKeys("ВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВлади");
-           addressPage.ProceedToCourierChoice.Click();
-           IWebElement chooseCourier = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Избери куриер')]"));
-       
-       }
-
+        }
+        
         [TestMethod]
         public void InputAddressDetails_TypeSpecialCharsInIvoiceDetailsField_PageObjectModel()
         {
@@ -547,7 +546,7 @@ namespace MyMallProject.Basket
             addressPage.InvoiceDetailsField.Click();
             addressPage.InvoiceDetailsField.SendKeys("\"№$%%€*@ Арбилис");
             addressPage.ProceedToCourierChoice.Click();
-            IWebElement chooseCourier = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Избери куриер')]"));
+            Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
 
         }
 
