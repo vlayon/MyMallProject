@@ -37,11 +37,11 @@ namespace MyMallProject
             logInButton.Click();
         }
 
-       //[TestCleanup]
-       //public void TestCleanup()
-       //{
-       //    driverChrome.Quit();
-       //}
+        [TestCleanup]
+        public void TestCleanup()
+        {
+            driverChrome.Quit();
+        }
         
         [TestMethod]
         public void AddItemsToBasket_PageObjectModel()
