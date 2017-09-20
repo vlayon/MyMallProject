@@ -73,9 +73,9 @@ namespace MyMallProject
             addingSecondItem.AddToBasket.Click();
             myCart.SeeTheCartButton.Click();
             IWebElement firstItemInBasket = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Puma Essential')]"));
-            Assert.AreEqual("True", firstItemInBasket.Displayed);
+            Assert.IsTrue(firstItemInBasket.Displayed);
             IWebElement secondItemInBasket = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Jack and Jones')]"));
-            Assert.AreEqual("True", secondItemInBasket.Displayed);
+            Assert.IsTrue(secondItemInBasket.Displayed);
             
         }
 

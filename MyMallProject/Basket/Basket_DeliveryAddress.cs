@@ -88,7 +88,7 @@ namespace MyMallProject.Basket
             addressPage.InvoiceDetailsField.Click();
             addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
             addressPage.ProceedToCourierChoice.Click();
-            Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+            Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
                 
         }
 
@@ -154,7 +154,7 @@ namespace MyMallProject.Basket
              addressPage.InvoiceDetailsField.Click();
              addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
              addressPage.ProceedToCourierChoice.Click();
-             Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+             Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
 
         }
        
@@ -187,7 +187,7 @@ namespace MyMallProject.Basket
             addressPage.InvoiceDetailsField.Click();
             addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
             addressPage.ProceedToCourierChoice.Click();
-            Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+            Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
         }
        
          [TestMethod]
@@ -251,7 +251,7 @@ namespace MyMallProject.Basket
             addressPage.InvoiceDetailsField.Click();
             addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
             addressPage.ProceedToCourierChoice.Click();
-            Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed); 
+            Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed); 
             
         }
         
@@ -284,7 +284,7 @@ namespace MyMallProject.Basket
                addressPage.InvoiceDetailsField.Click();
                addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
                addressPage.ProceedToCourierChoice.Click();
-               Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+               Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
          
            }
         
@@ -317,7 +317,7 @@ namespace MyMallProject.Basket
               addressPage.InvoiceDetailsField.Click();
               addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
               addressPage.ProceedToCourierChoice.Click();
-              Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+              Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
 
         }
         
@@ -350,7 +350,7 @@ namespace MyMallProject.Basket
              addressPage.InvoiceDetailsField.Click();
              addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
              addressPage.ProceedToCourierChoice.Click();
-             Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+             Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
 
          }
         
@@ -383,7 +383,7 @@ namespace MyMallProject.Basket
              addressPage.InvoiceDetailsField.Click();
              addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
              addressPage.ProceedToCourierChoice.Click();
-             Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+             Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
 
         }
        
@@ -416,7 +416,7 @@ namespace MyMallProject.Basket
              addressPage.InvoiceDetailsField.Click();
              addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
              addressPage.ProceedToCourierChoice.Click();
-             Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+             Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
 
         }
        
@@ -449,7 +449,7 @@ namespace MyMallProject.Basket
               addressPage.InvoiceDetailsField.Click();
               addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
               addressPage.ProceedToCourierChoice.Click();
-              Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+              Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
 
           }
         
@@ -480,7 +480,7 @@ namespace MyMallProject.Basket
             addressPage.InvoiceDetailsField.Click();
             addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
             addressPage.ProceedToCourierChoice.Click();
-            Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+            Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
 
         }
         
@@ -513,7 +513,7 @@ namespace MyMallProject.Basket
             addressPage.InvoiceDetailsField.Click();
             addressPage.InvoiceDetailsField.SendKeys("ВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВлади");
             addressPage.ProceedToCourierChoice.Click();
-            Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+            Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
 
         }
         
@@ -546,7 +546,7 @@ namespace MyMallProject.Basket
             addressPage.InvoiceDetailsField.Click();
             addressPage.InvoiceDetailsField.SendKeys("\"№$%%€*@ Арбилис");
             addressPage.ProceedToCourierChoice.Click();
-            Assert.AreEqual("True", addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+            Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
 
         }
 
