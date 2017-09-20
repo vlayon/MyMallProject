@@ -44,7 +44,7 @@ namespace MyMallProject
         }
         
         [TestMethod]
-        public void AddItemsToBasket_PageObjectModel()
+        public void AddItemsToBasket()
         {
             TheSearchFieldPage searchField = new TheSearchFieldPage(driverChrome);
             searchField.SearchField.Click();
@@ -73,14 +73,14 @@ namespace MyMallProject
             addingSecondItem.AddToBasket.Click();
             myCart.SeeTheCartButton.Click();
             IWebElement firstItemInBasket = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Puma Essential')]"));
-            Assert.IsTrue(firstItemInBasket.Displayed);
+            Assert.IsTrue(firstItemInBasket.Displayed, "First item is not displayed");
             IWebElement secondItemInBasket = driverChrome.FindElement(By.XPath("//*[contains(text(), 'Jack and Jones')]"));
-            Assert.IsTrue(secondItemInBasket.Displayed);
+            Assert.IsTrue(secondItemInBasket.Displayed, "Second item is not displayed");
             
         }
 
        [TestMethod]
-       public void AddItemsToBasketAndChangeQuantityOfFirstItemTo30_PageObjectModel()
+       public void AddItemsToBasketAndChangeQuantityOfFirstItemTo30()
        {
            TheSearchFieldPage searchField = new TheSearchFieldPage(driverChrome);
            searchField.SearchField.Click();
@@ -139,7 +139,7 @@ namespace MyMallProject
        }
        
            [TestMethod]
-       public void AddItemsToBasketAndChangeQuantityOfFirstItemTo0_PageObjectModel()
+       public void AddItemsToBasketAndChangeQuantityOfFirstItemTo0()
        {
            TheSearchFieldPage searchField = new TheSearchFieldPage(driverChrome);
            searchField.SearchField.Click();
@@ -185,7 +185,7 @@ namespace MyMallProject
        }
        
        [TestMethod]
-       public void AddItemsToBasketAndRemoveAnItem_PageObjectModel()
+       public void AddItemsToBasketAndRemoveAnItem()
        {
            TheSearchFieldPage searchField = new TheSearchFieldPage(driverChrome);
            searchField.SearchField.Click();

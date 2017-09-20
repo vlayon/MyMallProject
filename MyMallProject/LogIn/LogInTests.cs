@@ -51,7 +51,7 @@ namespace MyMallProject
             logInPage.PassForLogIn.SendKeys("testPass");
             logInPage.LogInButton.Click();
             bool errorMessageIsPresent = logInPage.WrongEmailMessage.Displayed;
-            Assert.IsTrue(errorMessageIsPresent);
+            Assert.IsTrue(errorMessageIsPresent, "Message for wrong email is not displayed!");
               
           }
         
@@ -63,7 +63,7 @@ namespace MyMallProject
             logInPage.PassForLogIn.SendKeys("testP1ss");
             logInPage.LogInButton.Click();
             bool errorMessageIsPresent = logInPage.WrongEmailMessage.Displayed;
-            Assert.IsTrue(errorMessageIsPresent);
+            Assert.IsTrue(errorMessageIsPresent, "Message for wrong password is not displayed");
         
          }
          [TestMethod]
@@ -73,7 +73,7 @@ namespace MyMallProject
             logInPage.EmailForLogIn.SendKeys("vhidd3n@gmail.com");
             logInPage.LogInButton.Click();
             bool errorMessageEmptyPasswordIsPresent = logInPage.EmptyPasswordMessage.Displayed;
-            Assert.IsTrue(errorMessageEmptyPasswordIsPresent);
+            Assert.IsTrue(errorMessageEmptyPasswordIsPresent, "Message for empty password is not displayed");
         
          }
 
@@ -85,7 +85,7 @@ namespace MyMallProject
               forgotPass.EmailField.SendKeys("vhidd3n@gmail.com");
               forgotPass.SendEmailButton.Click();
               bool emailSuccessfulSentMessageIsPresent = forgotPass.SuccessfulRecoveryMessage.Displayed;
-              Assert.IsTrue(emailSuccessfulSentMessageIsPresent);
+              Assert.IsTrue(emailSuccessfulSentMessageIsPresent, "Message for succesfull sent email is not displayed");
           }
 
           [TestMethod]
@@ -95,7 +95,7 @@ namespace MyMallProject
               ForgotPasswordPage forgotPass = new ForgotPasswordPage(driverChrome);
               forgotPass.SendEmailButton.Click();
               bool emailUnsuccessfulSentMessageIsPresent= forgotPass.UnSuccessfulRecoveryMessage.Displayed;
-              Assert.IsTrue(emailUnsuccessfulSentMessageIsPresent);
+              Assert.IsTrue(emailUnsuccessfulSentMessageIsPresent, "Message for wrong/empty email is not displayed");
           }
 
          [TestMethod]
@@ -107,7 +107,7 @@ namespace MyMallProject
               forgotPass.SendEmailButton.Click();
               
               bool wrongEmailMessageIsPresent = forgotPass.UserWithThisEmailDoesntExist.Displayed;
-              Assert.IsTrue(wrongEmailMessageIsPresent);
+              Assert.IsTrue(wrongEmailMessageIsPresent, "Message for wrong/empty email is not displayed");
           }
 
         [TestMethod]
@@ -118,7 +118,7 @@ namespace MyMallProject
               forgotPass.EmailField.SendKeys("12345");
               forgotPass.SendEmailButton.Click();
               bool isInvalidEmail = forgotPass.InvalidEmailMessage.Displayed;
-              Assert.IsTrue(isInvalidEmail);
+              Assert.IsTrue(isInvalidEmail, "Message for invalid email is not displayed");
           }
 
     }

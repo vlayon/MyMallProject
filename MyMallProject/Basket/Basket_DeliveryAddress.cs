@@ -60,7 +60,7 @@ namespace MyMallProject.Basket
 
 
         [TestMethod]
-        public void InputRealAddressDetails_PageObjectModel()
+        public void InputRealAddressDetails()
         {
             MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
             addressPage.FirstNameField.Click();
@@ -88,13 +88,13 @@ namespace MyMallProject.Basket
             addressPage.InvoiceDetailsField.Click();
             addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
             addressPage.ProceedToCourierChoice.Click();
-            Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+            Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed, "You were not redirected to courier page");
                 
         }
 
 
         [TestMethod]
-        public void InputAddressDetailsWithBlankFirstName_PageObjectModel()
+        public void InputAddressDetailsWithBlankFirstName()
         {
             MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
             
@@ -126,7 +126,7 @@ namespace MyMallProject.Basket
         }
        
         [TestMethod]
-         public void InputAddressDetails_NameWithOver100Characters_PageObjectModel()
+         public void InputAddressDetails_NameWithOver100Characters()
          {
              MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
              addressPage.FirstNameField.Click();
@@ -154,12 +154,12 @@ namespace MyMallProject.Basket
              addressPage.InvoiceDetailsField.Click();
              addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
              addressPage.ProceedToCourierChoice.Click();
-             Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+             Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed, "You were not redirected to courier page");
 
         }
        
         [TestMethod]
-        public void InputAddressDetails_NameWithSpecialCharacters_PageObjectModel()
+        public void InputAddressDetails_NameWithSpecialCharacters()
         {
             MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
             addressPage.FirstNameField.Click();
@@ -187,11 +187,11 @@ namespace MyMallProject.Basket
             addressPage.InvoiceDetailsField.Click();
             addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
             addressPage.ProceedToCourierChoice.Click();
-            Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+            Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed, "You were not redirected to courier page");
         }
        
          [TestMethod]
-         public void InputAddressDetails_LeaveSurnameEmpty_PageObjectModel()
+         public void InputAddressDetails_LeaveSurnameEmpty()
          {
              MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
              addressPage.FirstNameField.Click();
@@ -223,7 +223,7 @@ namespace MyMallProject.Basket
          }
        
         [TestMethod]
-        public void InputAddressDetails_TypeForSurnameMoreThan100Characters_PageObjectModel()
+        public void InputAddressDetails_TypeForSurnameMoreThan100Characters()
         {
             MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
             addressPage.FirstNameField.Click();
@@ -251,12 +251,12 @@ namespace MyMallProject.Basket
             addressPage.InvoiceDetailsField.Click();
             addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
             addressPage.ProceedToCourierChoice.Click();
-            Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed); 
+            Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed, "You were not redirected to courier page"); 
             
         }
         
            [TestMethod]
-           public void InputAddressDetails_TypeSurnameWithCharacters_PageObjectModel()
+           public void InputAddressDetails_TypeSurnameWithCharacters()
            {
                MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
                addressPage.FirstNameField.Click();
@@ -284,12 +284,12 @@ namespace MyMallProject.Basket
                addressPage.InvoiceDetailsField.Click();
                addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
                addressPage.ProceedToCourierChoice.Click();
-               Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+               Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed, "You were not redirected to courier page");
          
            }
         
           [TestMethod]
-          public void InputAddressDetails_TypeMobileTelephoneNumberWith10DigitsStartingWith09_PageObjectModel()
+          public void InputAddressDetails_TypeMobileTelephoneNumberWith10DigitsStartingWith09()
           {
               MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
               addressPage.FirstNameField.Click();
@@ -317,12 +317,12 @@ namespace MyMallProject.Basket
               addressPage.InvoiceDetailsField.Click();
               addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
               addressPage.ProceedToCourierChoice.Click();
-              Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+              Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed, "You were not redirected to courier page");
 
         }
         
          [TestMethod]
-         public void InputAddressDetails_TypeStationaryTelephoneNumberWith13Digits_PageObjectModel()
+         public void InputAddressDetails_TypeStationaryTelephoneNumberWith13Digits()
          {
              MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
              addressPage.FirstNameField.Click();
@@ -350,12 +350,12 @@ namespace MyMallProject.Basket
              addressPage.InvoiceDetailsField.Click();
              addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
              addressPage.ProceedToCourierChoice.Click();
-             Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+             Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed, "You were not redirected to courier page");
 
          }
         
          [TestMethod]
-         public void InputAddressDetails_TypeStationaryTelephoneNumberWith12Digits_PageObjectModel()
+         public void InputAddressDetails_TypeStationaryTelephoneNumberWith12Digits()
          {
              MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
              addressPage.FirstNameField.Click();
@@ -383,12 +383,12 @@ namespace MyMallProject.Basket
              addressPage.InvoiceDetailsField.Click();
              addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
              addressPage.ProceedToCourierChoice.Click();
-             Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+             Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed, "You were not redirected to courier page");
 
         }
        
          [TestMethod]
-         public void InputAddressDetails_TypeStationaryTelephoneNumberWith8Digits_PageObjectModel()
+         public void InputAddressDetails_TypeStationaryTelephoneNumberWith8Digits()
          {
              MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
              addressPage.FirstNameField.Click();
@@ -416,12 +416,12 @@ namespace MyMallProject.Basket
              addressPage.InvoiceDetailsField.Click();
              addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
              addressPage.ProceedToCourierChoice.Click();
-             Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+             Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed, "You were not redirected to courier page");
 
         }
        
           [TestMethod]
-          public void InputAddressDetails_TypeStationaryTelephoneNumberWith7Digits_PageObjectModel()
+          public void InputAddressDetails_TypeStationaryTelephoneNumberWith7Digits()
           {
               MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
               addressPage.FirstNameField.Click();
@@ -449,12 +449,12 @@ namespace MyMallProject.Basket
               addressPage.InvoiceDetailsField.Click();
               addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
               addressPage.ProceedToCourierChoice.Click();
-              Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+              Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed, "You were not redirected to courier page");
 
           }
         
         [TestMethod]
-        public void InputAddressDetails_LeaveTelephoneNumberEmpty_PageObjectModel()
+        public void InputAddressDetails_LeaveTelephoneNumberEmpty()
         {
             MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
             addressPage.FirstNameField.Click();
@@ -480,12 +480,12 @@ namespace MyMallProject.Basket
             addressPage.InvoiceDetailsField.Click();
             addressPage.InvoiceDetailsField.SendKeys("Арбилис ООД");
             addressPage.ProceedToCourierChoice.Click();
-            Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+            Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed, "You were not redirected to courier page");
 
         }
         
         [TestMethod]
-        public void InputAddressDetails_TypeOver255CharsInIvoiceDetailsField_PageObjectModel()
+        public void InputAddressDetails_TypeOver255CharsInIvoiceDetailsField()
         {
             MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
             addressPage.FirstNameField.Click();
@@ -513,12 +513,12 @@ namespace MyMallProject.Basket
             addressPage.InvoiceDetailsField.Click();
             addressPage.InvoiceDetailsField.SendKeys("ВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВладимирееВлади");
             addressPage.ProceedToCourierChoice.Click();
-            Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+            Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed, "You were not redirected to courier page");
 
         }
         
         [TestMethod]
-        public void InputAddressDetails_TypeSpecialCharsInIvoiceDetailsField_PageObjectModel()
+        public void InputAddressDetails_TypeSpecialCharsInIvoiceDetailsField()
         {
             MyCart_Addrespage addressPage = new MyCart_Addrespage(driverChrome);
             addressPage.FirstNameField.Click();
@@ -546,7 +546,7 @@ namespace MyMallProject.Basket
             addressPage.InvoiceDetailsField.Click();
             addressPage.InvoiceDetailsField.SendKeys("\"№$%%€*@ Арбилис");
             addressPage.ProceedToCourierChoice.Click();
-            Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed);
+            Assert.IsTrue(addressPage.SuccesfullyWentOnTheCourierPage.Displayed, "You were not redirected to courier page");
 
         }
 
